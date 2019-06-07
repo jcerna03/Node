@@ -1,7 +1,8 @@
 var express = require('express')
 var Storage = require('../Storage')
 var Router = express.Router()
-
+var  where = require("lodash.where");
+/*
 Router.get('/Filtro', function(req, res) {
   // get Filtro
   Storage.getData('aplication')
@@ -13,9 +14,29 @@ Router.get('/Filtro', function(req, res) {
 
 })
 
+*/
+
+Router.get('/busqueda', function(req, res) {
+  console.log("gola");
+  Storage.getData()
+    .then((data) => {
+      res.json({
+        "datos": where(data, {
+          Id: 1
+        })
+      });
+    })
+    .catch((err) => {
+      res.json({
+        "datos": err
+      });
+    });
+})
+
+
 
 module.exports = Router
-
+/*
 (function(document, window, undefined, $) {
   (function() {
     return Filtro = {
@@ -46,3 +67,4 @@ module.exports = Router
 
   })
 })
+*/

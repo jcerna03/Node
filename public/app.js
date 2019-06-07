@@ -9,6 +9,29 @@ $("#rangoPrecio").ionRangeSlider({
   prefix: "$"
 })
 
+
+
+
+$('#buscar').click(function() {
+var urls = "http://localhost:8082/busqueda";
+$.ajax({
+url: urls,
+type: 'get',
+dataType: 'json',
+data:
+{
+  rango:'1'
+}
+})
+.done(function(data) {
+if (!data.error) {
+console.log(data);
+}
+});
+});
+
+
+
 function setSearch() {
   let busqueda = $('#checkPersonalizada')
   busqueda.on('change', (e) => {
