@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
@@ -12,6 +13,7 @@
   <script src="ion.rangeSlider.min.js"></script>
   <link rel="stylesheet" href="app.css">
 </head>
+
 <body>
   <div class="navbar-fixed">
     <nav>
@@ -20,79 +22,103 @@
       </div>
     </nav>
   </div>
-    <div class="row">
-      <div class="col m4">
-        <div class="card horizontal">
-          <div class="container center-align">
-            <div class="switch">
-              <h5>Busqueda Personalizada: </h5>
-              <label>
-                Desactivada
-                <input type="checkbox" id="checkPersonalizada">
-                <span class="lever"></span>
-                Activada
-              </label>
-            </div>
-            <!--  Busqueda personalizada -->
-            <div class="row invisible" id="personalizada">
-                <div class="row">
-                  Ciudad:
-                  <select id="ciudad">
-                    <option value="" selected>Escoge una ciudad</option>
-                  </select>
-                </div>
-                <div class="row">
-                  Tipo:
-                  <select id="tipo">
-                    <option value="" selected>Escoge un tipo</option>
-                  </select>
-                </div>
-                <div class="row">
-                  Precio:
-                  <input type="text" id="rangoPrecio">
-                </div>
-            </div>
+  <div class="row">
+    <div class="col m4">
+      <div class="card horizontal">
+        <div class="container center-align">
+          <div class="switch">
+            <h5>Busqueda Personalizada: </h5>
+            <label>
+              Desactivada
+              <input type="checkbox" id="checkPersonalizada">
+              <span class="lever"></span>
+              Activada
+            </label>
+          </div>
+          <!--  Busqueda personalizada -->
+          <div class="row invisible" id="personalizada">
+            <div class="row">
+              Ciudad:
+              <select id="ciudad">
+                <option value="" selected>Escoge una ciudad</option>
+                <option value="Houston" >Houston</option>
+                <option value="New York" >New York</option>
+                <option value="Orlando" >Orlando</option>
+                <option value="Los Angeles" >Los Angeles</option>
+                <option value="Washington" >Washington</option>
+                <option value="Miami" >Miami</option>
+                <option value="Washington" >Washington</option>
+                <option value="Washington" >Washington</option>
+                <option value="Washington" >Washington</option>
+                <option value="Washington" >Washington</option>
 
-            <button id="buscar" class="btn waves-effect waves-light blue" type="button">Ver Todos</button>
-          </div>
-        </div>
-      </div>
-      <div class="col m8 lista">
-        <!-- Property
-        <div class="card horizontal">
-          <div class="card-image">
-            <img src="images/home.jpg">
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <div>
-                <b>Direccion: </b><p></p>
-              </div>
-              <div>
-                <b>Ciudad: </b><p></p>
-              </div>
-              <div>
-                <b>Telefono: </b><p></p>
-              </div>
-              <div>
-                <b>Código postal: </b><p></p>
-              </div>
-              <div>
-                <b>Precio: </b><p></p>
-              </div>
-              <div>
-                <b>Tipo: </b><p></p>
-              </div>
+
+              </select>
             </div>
-            <div class="card-action right-align">
-              <a href="#">Ver más</a>
+            <div class="row">
+              Tipo:
+              <select id="tipo">
+                <option value="" selected>Escoge un tipo</option>
+                <option value="Casa" >Casa</option>
+                <option value="Casa de Campo" >Casa de Campo</option>
+                <option value="Apartamento" >Apartamento</option>
+
+              </select>
+            </div>
+            <div class="row">
+              Precio:
+              <input type="text" id="rangoPrecio">
             </div>
           </div>
+
+          <button id="buscar" class="btn waves-effect waves-light blue" type="button">Ver Todos</button>
         </div>
-        -->
       </div>
     </div>
+    <div id="lista" class="col m8 lista">
+
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src="images/home.jpg">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <div>
+              <b>Direccion: :direccion: </b>
+              <p></p>
+            </div>
+            <div>
+              <b>Ciudad: :ciudad:</b>
+              <p></p>
+            </div>
+            <div>
+              <b>Telefono: :telefono: </b>
+              <p></p>
+            </div>
+            <div>
+              <b>Código postal: :telefono: </b>
+              <p></p>
+            </div>
+            <div>
+              <b>Precio: :precio: </b>
+              <p></p>
+            </div>
+            <div>
+              <b>Tipo: :tipo: </b>
+              <p></p>
+            </div>
+          </div>
+          <div class="card-action right-align">
+            <a href="#">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
+
 </html>

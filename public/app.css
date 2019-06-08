@@ -42,6 +42,9 @@ div.lista {
   margin-top: 1em;
 }
 
+select {
+  display:block;
+}
 .select-wrapper {
   width: 50%;
   margin: 0 auto !important;

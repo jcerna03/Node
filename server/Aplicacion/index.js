@@ -1,7 +1,7 @@
 var express = require('express')
 var Storage = require('../Storage')
 var Router = express.Router()
-var  where = require("lodash.where");
+var where = require("lodash.where");
 /*
 Router.get('/Filtro', function(req, res) {
   // get Filtro
@@ -17,13 +17,19 @@ Router.get('/Filtro', function(req, res) {
 */
 
 Router.get('/busqueda', function(req, res) {
-  console.log("gola");
+
+  var urlParam = function(name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(req.url);
+    if (results == null) {
+      return null;
+    }
+    return decodeURI(results[1]) || 0;
+  }
+console.log(req.url)
   Storage.getData()
     .then((data) => {
       res.json({
-        "datos": where(data, {
-          Id: 1
-        })
+        "datos": data.filter(data => (data.Ciudad == urlParam('ciudad') || urlParam('ciudad') == '') && (data.Tipo == urlParam('tipo') || urlParam('tipo') == '') && ((parseFloat(data.Precio.split('$')[1].replace(',','')) >= urlParam('rangomenor') && parseFloat(data.Precio.split('$')[1].replace(',','')) <= urlParam('rangomayor')) || (urlParam('rangomenor')=='' || urlParam('rangomayor') =='')))
       });
     })
     .catch((err) => {
@@ -31,6 +37,7 @@ Router.get('/busqueda', function(req, res) {
         "datos": err
       });
     });
+
 })
 
 
